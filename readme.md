@@ -28,4 +28,3 @@ Debe mostrar por consola la última transferencia registrada.
 
 
 ```
-### hay ejemplos comentados 
