@@ -21,7 +21,6 @@ async function nuevaTransferencia(
   const client = await pool.connect(); // Se establece una conexión con la base de datos
   try {
     await client.query("BEGIN"); // Se inicia una transacción SQL
-
     // Se registra la nueva transferencia en la tabla de transferencias
     await client.query(
       "INSERT INTO transferencias(descripcion, fecha, monto, cuenta_origen, cuenta_destino) VALUES($1, $2, $3, $4, $5)",
@@ -80,7 +79,6 @@ async function consultarSaldo(cuenta_id) {
 
 // Ejecutar los registros
 async function Ejemplos() {
-  
   // Ejemplo 1: Registrar todas las transferencias
   await nuevaTransferencia("transferencia", "2024-06-06", 50, 1, 2);
   await nuevaTransferencia("transferencia", "2024-06-06", 50, 1, 2);
